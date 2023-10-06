@@ -1,5 +1,6 @@
 import 'package:e_commerce/src/commans/custom_button.dart/custom_button.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
+import 'package:e_commerce/src/views/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -64,13 +65,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 style:
                     TextStyle(color: Colors.grey, fontSize: size.width * 0.04),
               ),
-              const TextField(
-                decoration: InputDecoration(
-                    suffixIcon: Icon(
-                  Icons.remove_red_eye,
-                  color: Colors.grey,
-                )),
-              ),
+              const TextField(),
               SizedBox(
                 height: size.height * 0.04,
               ),
@@ -102,12 +97,20 @@ class _SignupScreenState extends State<SignupScreen> {
                       style: TextStyle(
                           color: Colors.grey, fontSize: size.width * 0.04),
                     ),
-                    Text(
-                      "Sign in",
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                          fontSize: size.width * 0.04),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginScreen()));
+                      },
+                      child: Text(
+                        "Sign in",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold,
+                            fontSize: size.width * 0.04),
+                      ),
                     ),
                   ],
                 ),
