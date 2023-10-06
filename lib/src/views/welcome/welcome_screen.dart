@@ -1,6 +1,7 @@
 import 'package:e_commerce/src/commans/custom_button.dart/custom_button.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/login/login_screen.dart';
+import 'package:e_commerce/src/views/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -66,12 +67,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: size.height * 0.03,
             ),
             Center(
-              child: Text(
-                "Sign Up",
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.bold,
-                    fontSize: size.width * 0.04),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignupScreen()));
+                },
+                child: Text(
+                  "Sign Up",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                      fontSize: size.width * 0.04),
+                ),
               ),
             ),
           ],

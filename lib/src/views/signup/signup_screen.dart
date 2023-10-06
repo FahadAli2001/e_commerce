@@ -1,16 +1,15 @@
 import 'package:e_commerce/src/commans/custom_button.dart/custom_button.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
-import 'package:e_commerce/src/views/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
@@ -41,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  "Login",
+                  "SignUp",
                   style: TextStyle(
                       color: Colors.grey,
                       fontWeight: FontWeight.w900,
@@ -52,11 +51,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: size.height * 0.08,
               ),
               Text(
-                "Email",
+                "Name",
                 style:
                     TextStyle(color: Colors.grey, fontSize: size.width * 0.04),
               ),
               const TextField(),
+              SizedBox(
+                height: size.height * 0.04,
+              ),
+              Text(
+                "Email",
+                style:
+                    TextStyle(color: Colors.grey, fontSize: size.width * 0.04),
+              ),
+              const TextField(
+                decoration: InputDecoration(
+                    suffixIcon: Icon(
+                  Icons.remove_red_eye,
+                  color: Colors.grey,
+                )),
+              ),
               SizedBox(
                 height: size.height * 0.04,
               ),
@@ -75,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: size.height * 0.06,
               ),
-              Center(child: CustomButton(text: "Log in", onpressed: () {})),
+              Center(child: CustomButton(text: "Sign Up", onpressed: () {})),
               SizedBox(
                 height: size.height * 0.05,
               ),
@@ -84,24 +98,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Row(
                   children: [
                     Text(
-                      "Don't have an account ?",
+                      "Already have an account ?",
                       style: TextStyle(
                           color: Colors.grey, fontSize: size.width * 0.04),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignupScreen()));
-                      },
-                      child: Text(
-                        "Sign up",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
-                            fontSize: size.width * 0.04),
-                      ),
+                    Text(
+                      "Sign in",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: size.width * 0.04),
                     ),
                   ],
                 ),
