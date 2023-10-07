@@ -1,4 +1,4 @@
-import 'package:e_commerce/src/commans/custom_button.dart/custom_button.dart';
+import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/login/login_screen.dart';
 import 'package:e_commerce/src/views/signup/signup_screen.dart';

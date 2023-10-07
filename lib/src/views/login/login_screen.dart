@@ -1,4 +1,5 @@
-import 'package:e_commerce/src/commans/custom_button.dart/custom_button.dart';
+import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
+import 'package:e_commerce/src/commans/custom_textfield/custom_textfield.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -56,21 +57,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 style:
                     TextStyle(color: Colors.grey, fontSize: size.width * 0.04),
               ),
-              const TextField(),
+              const CustomTextField(),
               SizedBox(
-                height: size.height * 0.04,
+                height: size.height * 0.02,
               ),
               Text(
                 "Password",
                 style:
                     TextStyle(color: Colors.grey, fontSize: size.width * 0.04),
               ),
-              const TextField(
-                decoration: InputDecoration(
-                    suffixIcon: Icon(
+              const CustomTextField(
+                sufficIcon: Icon(
                   Icons.remove_red_eye,
                   color: Colors.grey,
-                )),
+                ),
               ),
               SizedBox(
                 height: size.height * 0.06,
