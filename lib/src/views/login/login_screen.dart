@@ -1,6 +1,7 @@
 import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/commans/custom_textfield/custom_textfield.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
+import 'package:e_commerce/src/views/home/home_screen.dart';
 import 'package:e_commerce/src/views/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -75,7 +76,15 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: size.height * 0.06,
               ),
-              Center(child: CustomButton(text: "Log in", onpressed: () {})),
+              Center(
+                  child: CustomButton(
+                      text: "Log in",
+                      onpressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()));
+                      })),
               SizedBox(
                 height: size.height * 0.05,
               ),
