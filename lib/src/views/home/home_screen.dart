@@ -15,13 +15,36 @@ class _HomeScreenState extends State<HomeScreen> {
     Colors.orange.shade300,
     Colors.green.shade300
   ];
+  List<Text> text = [
+    const Text(
+      "Women",
+      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+    ),
+    const Text(
+      "Men",
+      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+    ),
+    const Text(
+      "Kids",
+      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+    ),
+    const Text(
+      "New Born",
+      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white12,
+        title: const Text(
+          "Bolt",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       drawer: const Drawer(),
       body: Padding(
@@ -61,24 +84,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               //
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Categories",
-                    style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontWeight: FontWeight.bold,
-                        fontSize: size.width * 0.055),
-                  ),
-                  Text(
-                    "See all",
-                    style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontWeight: FontWeight.bold,
-                        fontSize: size.width * 0.035),
-                  ),
-                ],
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Categories",
+                  style: TextStyle(
+                      color: Colors.grey.shade700,
+                      fontWeight: FontWeight.bold,
+                      fontSize: size.width * 0.05),
+                ),
               ),
               //
               SizedBox(
@@ -87,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //
               SizedBox(
                 width: size.width,
-                height: size.height * 0.12,
+                height: size.height * 0.1,
                 // color: Colors.blueGrey,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -112,11 +126,141 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
+                        child: Center(
+                          child: text[index],
+                        ),
                       ),
                     );
                   },
                 ),
-              )
+              ),
+              //
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              //
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Featured",
+                    style: TextStyle(
+                        color: Colors.grey.shade700,
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.05),
+                  ),
+                  Text(
+                    "See all",
+                    style: TextStyle(
+                        color: Colors.grey.shade700,
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.035),
+                  ),
+                ],
+              ),
+              //
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              //
+              Container(
+                width: size.width,
+                height: size.height * 0.3,
+                color: Colors.white,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Container(
+                        width: size.width * 0.4,
+                        color: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset(
+                              "assets/images/shirt.jpg",
+                              width: size.width,
+                              height: size.height * 0.23,
+                              fit: BoxFit.cover,
+                            ),
+                            //
+
+                            const Text("\$55.00"),
+                            const Text("Men T-Shirt"),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              //
+              SizedBox(
+                height: size.height * 0.03,
+              ),
+              //
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Best Sell",
+                    style: TextStyle(
+                        color: Colors.grey.shade700,
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.05),
+                  ),
+                  Text(
+                    "See all",
+                    style: TextStyle(
+                        color: Colors.grey.shade700,
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.035),
+                  ),
+                  //
+                ],
+              ),
+              //
+              SizedBox(
+                height: size.height * 0.03,
+              ),
+              //
+              Container(
+                width: size.width,
+                height: size.height * 0.3,
+                color: Colors.white,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Container(
+                        width: size.width * 0.4,
+                        color: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset(
+                              "assets/images/shirt.jpg",
+                              width: size.width,
+                              height: size.height * 0.23,
+                              fit: BoxFit.cover,
+                            ),
+                            //
+
+                            const Text("\$55.00"),
+                            const Text("Men T-Shirt"),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),
