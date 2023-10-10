@@ -1,4 +1,5 @@
 import 'package:e_commerce/src/const/paddings/paddings.dart';
+import 'package:e_commerce/src/views/featured/featured_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -149,12 +150,20 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.bold,
                         fontSize: size.width * 0.05),
                   ),
-                  Text(
-                    "See all",
-                    style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontWeight: FontWeight.bold,
-                        fontSize: size.width * 0.035),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const FeaturedScreen()));
+                    },
+                    child: Text(
+                      "See all",
+                      style: TextStyle(
+                          color: Colors.grey.shade700,
+                          fontWeight: FontWeight.bold,
+                          fontSize: size.width * 0.035),
+                    ),
                   ),
                 ],
               ),
