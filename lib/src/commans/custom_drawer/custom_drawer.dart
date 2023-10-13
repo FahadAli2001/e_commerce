@@ -6,7 +6,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 class CustomDrawer extends StatelessWidget {
   CustomDrawer({super.key});
 
-  ZoomDrawerController drawerController = ZoomDrawerController();
+  final ZoomDrawerController drawerController = ZoomDrawerController();
 
   @override
   Widget build(BuildContext context) {
