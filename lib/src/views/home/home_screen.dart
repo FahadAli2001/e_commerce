@@ -1,6 +1,10 @@
+import 'package:e_commerce/src/commans/custom_drawer/custom_drawer.dart';
+
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/featured/featured_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ZoomDrawerController drawerController = ZoomDrawerController();
+
   List<Color> colors = [
     Colors.pink.shade300,
     Colors.blue.shade400,
@@ -34,20 +40,30 @@ class _HomeScreenState extends State<HomeScreen> {
       style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.white12,
+        backgroundColor: Colors.white,
         title: const Text(
           "Bolt",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
+        leading: InkWell(
+            onTap: () {
+              ZoomDrawer.of(context)!.toggle();
+            },
+            child: const Icon(
+              Icons.menu,
+              color: Colors.grey,
+            )),
       ),
-      drawer: const Drawer(),
+      drawer: CustomDrawer(drawerController: drawerController),
       body: Padding(
         padding:
             EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
@@ -154,8 +170,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => const FeaturedScreen()));
+                          PageTransition(
+                              type: PageTransitionType.rightToLeftWithFade,
+                              duration: const Duration(seconds: 1),
+                              child: const FeaturedScreen()));
                     },
                     child: Text(
                       "See all",

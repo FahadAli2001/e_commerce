@@ -2,7 +2,9 @@ import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/commans/custom_textfield/custom_textfield.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/login/login_screen.dart';
+import 'package:e_commerce/src/views/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -28,7 +30,12 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.pushReplacement(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.leftToRightWithFade,
+                          duration: const Duration(seconds: 1),
+                          child: const WelcomeScreen()));
                 },
                 child: Icon(
                   Icons.arrow_back,
@@ -101,8 +108,10 @@ class _SignupScreenState extends State<SignupScreen> {
                       onTap: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => const LoginScreen()));
+                            PageTransition(
+                                type: PageTransitionType.rightToLeftWithFade,
+                                duration: const Duration(seconds: 1),
+                                child: const LoginScreen()));
                       },
                       child: Text(
                         "Sign in",

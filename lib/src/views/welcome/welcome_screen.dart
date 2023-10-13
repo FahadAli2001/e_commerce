@@ -3,6 +3,7 @@ import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/login/login_screen.dart';
 import 'package:e_commerce/src/views/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -60,8 +61,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 onpressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginScreen()));
+                      PageTransition(
+                          type: PageTransitionType.rightToLeftWithFade,
+                          duration: const Duration(seconds: 1),
+                          child: const LoginScreen()));
                 }),
             SizedBox(
               height: size.height * 0.03,
@@ -71,8 +74,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 onTap: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignupScreen()));
+                      PageTransition(
+                          type: PageTransitionType.rightToLeftWithFade,
+                          duration: const Duration(seconds: 1),
+                          child: const SignupScreen()));
                 },
                 child: Text(
                   "Sign Up",
