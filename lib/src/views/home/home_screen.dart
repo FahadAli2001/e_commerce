@@ -1,5 +1,4 @@
-import 'package:e_commerce/src/commans/custom_drawer/custom_drawer.dart';
-
+import 'package:e_commerce/src/commans/custom_drawer/custom_drawer_menu_screen.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/featured/featured_screen.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +41,15 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // drawerController.open;
+    // drawerController.close!();
+    // drawerController.toggle!();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
 
@@ -56,14 +64,30 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         leading: InkWell(
             onTap: () {
-              ZoomDrawer.of(context)!.toggle();
+              ZoomDrawer.of(context)!.open();
+              // drawerController.open!();
             },
             child: const Icon(
               Icons.menu,
               color: Colors.grey,
             )),
       ),
-      drawer: CustomDrawer(drawerController: drawerController),
+      drawer: ZoomDrawer(
+        controller: drawerController,
+        style: DrawerStyle.defaultStyle,
+        menuScreenWidth: size.width,
+        mainScreen: const HomeScreen(),
+        menuScreen: const CustomDrawerMenuScreen(),
+        mainScreenTapClose: true,
+        androidCloseOnBackTap: true,
+        mainScreenScale: 0.2,
+        moveMenuScreen: false,
+        borderRadius: 24.0,
+        showShadow: true,
+        slideWidth: MediaQuery.of(context).size.width * .65,
+        openCurve: Curves.fastOutSlowIn,
+        closeCurve: Curves.easeIn,
+      ),
       body: Padding(
         padding:
             EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
