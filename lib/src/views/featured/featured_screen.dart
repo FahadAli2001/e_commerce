@@ -20,7 +20,7 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
         backgroundColor: Colors.white,
         leading: GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   PageTransition(
                       type: PageTransitionType.leftToRightWithFade,

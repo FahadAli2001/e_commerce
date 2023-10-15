@@ -1,7 +1,9 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
+import 'package:e_commerce/src/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SingleProductScreen extends StatefulWidget {
   const SingleProductScreen({super.key});
@@ -19,7 +21,12 @@ class _SingleProductScreenState extends State<SingleProductScreen> {
         backgroundColor: Colors.white,
         leading: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushReplacement(
+                  context,
+                  PageTransition(
+                      type: PageTransitionType.leftToRightWithFade,
+                      duration: const Duration(seconds: 1),
+                      child: const HomeScreen()));
             },
             child: const Icon(
               Icons.arrow_back,

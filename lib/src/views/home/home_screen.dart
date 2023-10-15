@@ -1,4 +1,3 @@
-import 'package:e_commerce/src/commans/custom_drawer/custom_drawer_menu_screen.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/featured/featured_screen.dart';
 import 'package:e_commerce/src/views/single_product/single_product.dart';

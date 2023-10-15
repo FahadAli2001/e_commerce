@@ -3,7 +3,6 @@ import 'package:e_commerce/src/commans/custom_textfield/custom_textfield.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/drawer/drawer.dart';
 
-import 'package:e_commerce/src/views/home/home_screen.dart';
 import 'package:e_commerce/src/views/signup/signup_screen.dart';
 import 'package:e_commerce/src/views/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
