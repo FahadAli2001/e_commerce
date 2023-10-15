@@ -26,18 +26,39 @@ class _SingleProductScreenState extends State<SingleProductScreen> {
               color: Colors.grey,
             )),
       ),
-      bottomNavigationBar: Container(
-        width: size.width,
-        height: size.height * 0.07,
-        color: blueColor,
-        child: Center(
-          child: Text(
-            "Buy Now",
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: size.width * 0.05),
-          ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Container(
+              width: size.width / 2.1,
+              height: size.height * 0.07,
+              color: Colors.grey.shade400,
+              child: Center(
+                child: Text(
+                  "Add To Cart",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: size.width * 0.05),
+                ),
+              ),
+            ),
+            Container(
+              width: size.width / 2.1,
+              height: size.height * 0.07,
+              color: blueColor,
+              child: Center(
+                child: Text(
+                  "Buy Now",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: size.width * 0.05),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       body: SingleChildScrollView(
@@ -153,6 +174,124 @@ class _SingleProductScreenState extends State<SingleProductScreen> {
                 style: TextStyle(
                     color: Colors.black, fontSize: size.width * 0.032),
               ),
+              //
+              SizedBox(
+                height: size.height * 0.01,
+              ),
+              const Divider(
+                thickness: 0.6,
+                color: Colors.grey,
+              ),
+              //
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: size.height * 0.01),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Center(
+                      child: Text(
+                        "Select Size",
+                        style: TextStyle(
+                            fontSize: size.width * 0.045,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.04,
+                    ),
+                    Text(
+                      "Select Color",
+                      style: TextStyle(
+                          fontSize: size.width * 0.045,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+              ),
+              //
+              const Divider(
+                thickness: 0.6,
+                color: Colors.grey,
+              ),
+              //
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              //
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: horizontal),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: size.width * 0.16,
+                      height: size.height * 0.07,
+                      child: Card(
+                        elevation: 5,
+                        color: Colors.grey.shade200,
+                        child: const Center(
+                          child: Text(
+                            "S",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.16,
+                      height: size.height * 0.07,
+                      child: Card(
+                        elevation: 5,
+                        color: blueColor,
+                        child: const Center(
+                          child: Text(
+                            "M",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.16,
+                      height: size.height * 0.07,
+                      child: Card(
+                        elevation: 5,
+                        color: Colors.grey.shade200,
+                        child: const Center(
+                          child: Text(
+                            "L",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.16,
+                      height: size.height * 0.07,
+                      child: Card(
+                        elevation: 5,
+                        color: Colors.grey.shade200,
+                        child: const Center(
+                          child: Text(
+                            "XL",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

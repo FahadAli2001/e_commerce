@@ -1,6 +1,7 @@
 import 'package:e_commerce/src/commans/custom_drawer/custom_drawer_menu_screen.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/featured/featured_screen.dart';
+import 'package:e_commerce/src/views/single_product/single_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:page_transition/page_transition.dart';
@@ -13,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final ZoomDrawerController drawerController = ZoomDrawerController();
+  // final ZoomDrawerController drawerController = ZoomDrawerController();
 
   List<Color> colors = [
     Colors.pink.shade300,
@@ -40,14 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
   ];
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    // drawerController.open;
-    // drawerController.close!();
-    // drawerController.toggle!();
-  }
+  final ZoomDrawerController zoomDrawerController = ZoomDrawerController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,29 +58,16 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         leading: InkWell(
             onTap: () {
-              ZoomDrawer.of(context)!.open();
-              // drawerController.open!();
+              if (ZoomDrawer.of(context)!.isOpen()) {
+                ZoomDrawer.of(context)!.close();
+              } else {
+                ZoomDrawer.of(context)!.open();
+              }
             },
             child: const Icon(
               Icons.menu,
               color: Colors.grey,
             )),
-      ),
-      drawer: ZoomDrawer(
-        controller: drawerController,
-        style: DrawerStyle.defaultStyle,
-        menuScreenWidth: size.width,
-        mainScreen: const HomeScreen(),
-        menuScreen: const CustomDrawerMenuScreen(),
-        mainScreenTapClose: true,
-        androidCloseOnBackTap: true,
-        mainScreenScale: 0.2,
-        moveMenuScreen: false,
-        borderRadius: 24.0,
-        showShadow: true,
-        slideWidth: MediaQuery.of(context).size.width * .65,
-        openCurve: Curves.fastOutSlowIn,
-        closeCurve: Curves.easeIn,
       ),
       body: Padding(
         padding:
@@ -224,24 +205,34 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Container(
-                        width: size.width * 0.4,
-                        color: Colors.white,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image.asset(
-                              "assets/images/shirt.jpg",
-                              width: size.width,
-                              height: size.height * 0.23,
-                              fit: BoxFit.cover,
-                            ),
-                            //
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeftWithFade,
+                                  duration: const Duration(seconds: 1),
+                                  child: const SingleProductScreen()));
+                        },
+                        child: Container(
+                          width: size.width * 0.4,
+                          color: Colors.white,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Image.asset(
+                                "assets/images/shirt.jpg",
+                                width: size.width,
+                                height: size.height * 0.23,
+                                fit: BoxFit.cover,
+                              ),
+                              //
 
-                            const Text("\$55.00"),
-                            const Text("Men T-Shirt"),
-                          ],
+                              const Text("\$55.00"),
+                              const Text("Men T-Shirt"),
+                            ],
+                          ),
                         ),
                       ),
                     );
