@@ -39,7 +39,7 @@ class _SingleProductScreenState extends State<SingleProductScreen> {
           children: [
             Container(
               width: size.width / 2.1,
-              height: size.height * 0.07,
+              height: size.height * 0.06,
               color: Colors.grey.shade400,
               child: Center(
                 child: Text(
@@ -53,7 +53,7 @@ class _SingleProductScreenState extends State<SingleProductScreen> {
             ),
             Container(
               width: size.width / 2.1,
-              height: size.height * 0.07,
+              height: size.height * 0.06,
               color: blueColor,
               child: Center(
                 child: Text(
