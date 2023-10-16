@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final Icon? sufficIcon;
-  const CustomTextField({super.key, this.controller, this.sufficIcon});
+  final String? hintText;
+  const CustomTextField(
+      {super.key, this.controller, this.sufficIcon, this.hintText});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class CustomTextField extends StatelessWidget {
       height: size.height * 0.04,
       child: TextField(
         controller: controller,
-        decoration: InputDecoration(suffixIcon: sufficIcon),
+        decoration: InputDecoration(suffixIcon: sufficIcon, hintText: hintText),
       ),
     );
   }
