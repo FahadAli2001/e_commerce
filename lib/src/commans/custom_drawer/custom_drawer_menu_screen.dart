@@ -1,5 +1,8 @@
 import 'package:e_commerce/src/const/colors/colors.dart';
+import 'package:e_commerce/src/views/cart/cart_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CustomDrawerMenuScreen extends StatelessWidget {
   const CustomDrawerMenuScreen({super.key});
@@ -32,52 +35,81 @@ class CustomDrawerMenuScreen extends StatelessWidget {
             SizedBox(
               height: size.height * 0.03,
             ),
-            const Text(
-              "- Profile",
-              style: TextStyle(
+            const Row(
+              children: [
+                Icon(
+                  Icons.person,
                   color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w300),
+                ),
+                Text(
+                  " Profile",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
             SizedBox(
-              height: size.height * 0.01,
+              height: size.height * 0.02,
             ),
-            const Text(
-              "- My Cart",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w300),
-            ),
-            SizedBox(
-              height: size.height * 0.01,
-            ),
-            const Text(
-              "- My Orders",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w300),
-            ),
-            SizedBox(
-              height: size.height * 0.01,
-            ),
-            const Text(
-              "- Language",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w300),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeftWithFade,
+                        duration: const Duration(seconds: 1),
+                        child: const CartScreen()));
+              },
+              child: const Row(
+                children: [
+                  Icon(
+                    Icons.shopping_cart,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "- My Cart",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              height: size.height * 0.01,
+              height: size.height * 0.02,
             ),
-            const Text(
-              "- Logout",
-              style: TextStyle(
+            const Row(
+              children: [
+                Icon(
+                  CupertinoIcons.bag_fill,
                   color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w300),
+                ),
+                Text(
+                  "- My Orders",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            const Row(
+              children: [
+                Icon(Icons.logout, color: Colors.white),
+                Text(
+                  "- Logout",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
           ],
         ),

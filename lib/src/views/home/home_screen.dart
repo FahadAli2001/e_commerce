@@ -1,3 +1,4 @@
+import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/featured/featured_screen.dart';
 import 'package:e_commerce/src/views/single_product/single_product.dart';
@@ -51,9 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
-        title: const Text(
-          "Bolt",
-          style: TextStyle(fontWeight: FontWeight.bold),
+        title: Text(
+          "Tickers",
+          style: TextStyle(fontWeight: FontWeight.bold, color: blueColor),
         ),
         leading: InkWell(
             onTap: () {
