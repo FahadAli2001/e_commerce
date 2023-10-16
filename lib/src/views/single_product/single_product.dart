@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
+import 'package:e_commerce/src/views/buy_now/buy_now_screen.dart';
 import 'package:e_commerce/src/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -51,17 +52,27 @@ class _SingleProductScreenState extends State<SingleProductScreen> {
                 ),
               ),
             ),
-            Container(
-              width: size.width / 2.1,
-              height: size.height * 0.06,
-              color: blueColor,
-              child: Center(
-                child: Text(
-                  "Buy Now",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: size.width * 0.05),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeftWithFade,
+                        duration: const Duration(seconds: 1),
+                        child: const BuyNowScreen()));
+              },
+              child: Container(
+                width: size.width / 2.1,
+                height: size.height * 0.06,
+                color: blueColor,
+                child: Center(
+                  child: Text(
+                    "Buy Now",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.05),
+                  ),
                 ),
               ),
             ),
