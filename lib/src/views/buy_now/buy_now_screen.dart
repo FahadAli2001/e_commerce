@@ -43,28 +43,18 @@ class _BuyNowScreenState extends State<BuyNowScreen> {
         child: Row(
           children: [
             InkWell(
-              onTap: () {
-                // Navigator.pushReplacement(
-                //     context,
-                //     PageTransition(
-                //         type: PageTransitionType.rightToLeftWithFade,
-                //         duration: const Duration(seconds: 1),
-                //         child: const BuyNowScreen()));
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Container(
-                  width: size.width * 0.9,
-                  height: size.height * 0.06,
-                  color: blueColor,
-                  child: Center(
-                    child: Text(
-                      "Buy Now",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: size.width * 0.05),
-                    ),
+              onTap: () {},
+              child: Container(
+                width: size.width / 2.1,
+                height: size.height * 0.06,
+                color: blueColor,
+                child: Center(
+                  child: Text(
+                    "Buy Now",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.05),
                   ),
                 ),
               ),
