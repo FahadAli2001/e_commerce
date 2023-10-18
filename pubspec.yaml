@@ -40,6 +40,8 @@ dependencies:
   flutter_zoom_drawer: ^3.1.1
   card_swiper: ^3.0.1
   video_player: ^2.7.2
+  provider: 
+  local_auth: ^2.1.7
 
 dev_dependencies:
   flutter_test:

@@ -1,12 +1,16 @@
 import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/commans/custom_textfield/custom_textfield.dart';
+import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
+import 'package:e_commerce/src/controller/auth/auth_controller.dart';
 import 'package:e_commerce/src/views/drawer/drawer.dart';
 
 import 'package:e_commerce/src/views/signup/signup_screen.dart';
 import 'package:e_commerce/src/views/welcome/welcome_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -18,6 +22,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    final AuthController authController = Provider.of<AuthController>(context);
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SingleChildScrollView(
@@ -88,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: CustomButton(
                       text: "Log in",
                       onpressed: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             PageTransition(
                                 type: PageTransitionType.rightToLeftWithFade,
@@ -96,8 +101,27 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: MainDrawer()));
                       })),
               SizedBox(
-                height: size.height * 0.05,
+                height: size.height * 0.02,
               ),
+              //
+              InkWell(
+                onTap: () {
+                  authController.checkBioMetricSensor(context);
+                },
+                child: Center(
+                  child: Icon(
+                    Icons.fingerprint,
+                    color: blueColor,
+                    size: size.width * 0.15,
+                  ),
+                ),
+              ),
+              //
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              //
+
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.12),
                 child: Row(
