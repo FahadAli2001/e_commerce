@@ -83,8 +83,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     BoxShadow(
                       color:
                           Colors.grey.withOpacity(0.5), // Color of the shadow
-                      spreadRadius: 3, // Spread radius
-                      blurRadius: 3, // Blur radius
+                      spreadRadius: 5, // Spread radius
+                      blurRadius: 5, // Blur radius
                       offset:
                           const Offset(0, 2), // Offset (position) of the shadow
                     ),
