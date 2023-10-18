@@ -29,7 +29,7 @@ class AuthController with ChangeNotifier {
       isAuth = await localAuthentication.authenticate(
           localizedReason: "Scan your finger print to login",
           options: const AuthenticationOptions(
-              biometricOnly: true, useErrorDialogs: true, stickyAuth: true));
+              biometricOnly: true, useErrorDialogs: true));
 
       if (isAuth == true) {
         Navigator.pushReplacement(
