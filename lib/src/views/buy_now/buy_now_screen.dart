@@ -66,11 +66,29 @@ class _BuyNowScreenState extends State<BuyNowScreen> {
         child: Padding(
           padding:
               EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
-          child: Column(
+          child: const Column(
             children: [
               CustomTextField(
                 hintText: "Name",
-              )
+              ),
+              CustomTextField(
+                hintText: "Contact No",
+              ),
+              CustomTextField(
+                hintText: "Email",
+              ),
+              CustomTextField(
+                hintText: "City",
+              ),
+              CustomTextField(
+                hintText: "Address",
+              ),
+              CustomTextField(
+                hintText: "Near Location",
+              ),
+              CustomTextField(
+                hintText: "Postal Code",
+              ),
             ],
           ),
         ),
