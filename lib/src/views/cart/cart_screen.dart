@@ -1,7 +1,7 @@
 import 'package:e_commerce/src/commans/custom_button/custom_cart_box/custom_cart_box.dart';
 import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
-import 'package:e_commerce/src/views/home/home_screen.dart';
+import 'package:e_commerce/src/views/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -26,7 +26,7 @@ class _CartScreenState extends State<CartScreen> {
                   PageTransition(
                       type: PageTransitionType.leftToRightWithFade,
                       duration: const Duration(seconds: 1),
-                      child: const HomeScreen()));
+                      child: MainDrawer()));
             },
             child: const Icon(
               Icons.arrow_back,

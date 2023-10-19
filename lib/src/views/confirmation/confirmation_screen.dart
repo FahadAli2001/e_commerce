@@ -1,7 +1,7 @@
 import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
-import 'package:e_commerce/src/views/home/home_screen.dart';
+import 'package:e_commerce/src/views/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
@@ -32,7 +32,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                     PageTransition(
                         type: PageTransitionType.rightToLeftWithFade,
                         duration: const Duration(seconds: 1),
-                        child: const HomeScreen()));
+                        child: MainDrawer()));
               })),
       body: Padding(
         padding:

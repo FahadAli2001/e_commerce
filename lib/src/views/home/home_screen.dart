@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
               } else {
                 ZoomDrawer.of(context)!.open();
               }
-              // ZoomDrawer.of(context)!.toggle();
+              ZoomDrawer.of(context)!.toggle();
               // ZoomDrawer.of(context)!.open();
             },
             child: const Icon(

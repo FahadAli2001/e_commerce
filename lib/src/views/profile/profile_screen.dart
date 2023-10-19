@@ -1,7 +1,8 @@
 import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/commans/custom_textfield/custom_textfield.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
-import 'package:e_commerce/src/views/home/home_screen.dart';
+import 'package:e_commerce/src/views/drawer/drawer.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -21,12 +22,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Colors.white,
         leading: GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   PageTransition(
                       type: PageTransitionType.leftToRightWithFade,
                       duration: const Duration(seconds: 1),
-                      child: const HomeScreen()));
+                      child: MainDrawer()));
             },
             child: const Icon(
               Icons.arrow_back,
@@ -54,6 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           padding:
               EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "Payment",
@@ -63,28 +65,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     fontSize: size.width * 0.08),
               ),
               SizedBox(
-                height: size.height * 0.01,
+                height: size.height * 0.1,
               ),
               const CustomTextField(
                 hintText: "Name",
+                sufficIcon: Icon(Icons.person),
               ),
               SizedBox(
-                height: size.height * 0.01,
+                height: size.height * 0.05,
               ),
               const CustomTextField(
                 hintText: "Gender",
               ),
               SizedBox(
-                height: size.height * 0.01,
+                height: size.height * 0.05,
               ),
               const CustomTextField(
                 hintText: "Email",
+                sufficIcon: Icon(Icons.email),
               ),
               SizedBox(
-                height: size.height * 0.01,
+                height: size.height * 0.05,
               ),
               const CustomTextField(
                 hintText: "Contact",
+                sufficIcon: Icon(Icons.call),
               )
             ],
           ),
