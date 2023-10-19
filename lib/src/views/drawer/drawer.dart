@@ -19,6 +19,7 @@ class MainDrawer extends StatelessWidget {
       mainScreen: const HomeScreen(),
       menuScreen: const CustomDrawerMenuScreen(),
       mainScreenTapClose: true,
+      duration: const Duration(milliseconds: 100),
       mainScreenScale: 0.2,
       moveMenuScreen: false,
       borderRadius: 24.0,

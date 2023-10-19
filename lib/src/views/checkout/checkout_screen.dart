@@ -1,6 +1,7 @@
 import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/commans/custom_button/custom_cart_box/custom_cart_box.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
+import 'package:e_commerce/src/views/confirmation/confirmation_screen.dart';
 import 'package:e_commerce/src/views/payment/payment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -42,12 +43,12 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 fontWeight: FontWeight.bold,
                 text: "Confirm",
                 onpressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     PageTransition(
-                  //         type: PageTransitionType.rightToLeftWithFade,
-                  //         duration: const Duration(seconds: 1),
-                  //         child: const CheckOutScreen()));
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeftWithFade,
+                          duration: const Duration(seconds: 1),
+                          child: const ConfirmationScreen()));
                 })),
         body: SingleChildScrollView(
           child: Padding(

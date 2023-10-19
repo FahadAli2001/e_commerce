@@ -44,6 +44,12 @@ class _HomeScreenState extends State<HomeScreen> {
   final ZoomDrawerController zoomDrawerController = ZoomDrawerController();
 
   @override
+  void initState() {
+    super.initState();
+    ZoomDrawer.of(context)!.open();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
 
@@ -63,6 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
               } else {
                 ZoomDrawer.of(context)!.open();
               }
+              // ZoomDrawer.of(context)!.toggle();
+              // ZoomDrawer.of(context)!.open();
             },
             child: const Icon(
               Icons.menu,
