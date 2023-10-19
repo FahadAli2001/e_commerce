@@ -91,9 +91,16 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(
                 height: size.height * 0.06,
               ),
-              Center(child: CustomButton(text: "Sign Up", onpressed: () {})),
+              Center(
+                  child: CustomButton(
+                      width: size.width * 0.7,
+                      height: size.height * 0.05,
+                      borderCircular: 5,
+                      fontWeight: FontWeight.bold,
+                      text: "Sign Up",
+                      onpressed: () {})),
               SizedBox(
-                height: size.height * 0.05,
+                height: size.height * 0.04,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.12),

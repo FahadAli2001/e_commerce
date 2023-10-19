@@ -1,4 +1,5 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/buy_now/buy_now_screen.dart';
@@ -40,42 +41,33 @@ class _SingleProductScreenState extends State<SingleProductScreen> {
           children: [
             Container(
               width: size.width / 2.1,
-              height: size.height * 0.06,
+              height: size.height * 0.05,
               color: Colors.grey.shade400,
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Add To Cart",
                   style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: size.width * 0.05),
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.pushReplacement(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeftWithFade,
-                        duration: const Duration(seconds: 1),
-                        child: const BuyNowScreen()));
-              },
-              child: Container(
-                width: size.width / 2.1,
-                height: size.height * 0.06,
-                color: blueColor,
-                child: Center(
-                  child: Text(
-                    "Buy Now",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: size.width * 0.05),
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
+            CustomButton(
+                text: "Buy Now",
+                fontWeight: FontWeight.bold,
+                textColor: Colors.white,
+                height: size.height * 0.05,
+                borderCircular: 0,
+                width: size.width / 2.2,
+                onpressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeftWithFade,
+                          duration: const Duration(seconds: 1),
+                          child: const BuyNowScreen()));
+                })
           ],
         ),
       ),

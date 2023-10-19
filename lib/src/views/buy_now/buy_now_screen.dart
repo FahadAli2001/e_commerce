@@ -1,5 +1,5 @@
+import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/commans/custom_textfield/custom_textfield.dart';
-import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/payment/payment_screen.dart';
 import 'package:e_commerce/src/views/single_product/single_product.dart';
@@ -40,32 +40,21 @@ class _BuyNowScreenState extends State<BuyNowScreen> {
             )),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: InkWell(
-          onTap: () {
-            Navigator.push(
-                context,
-                PageTransition(
-                    type: PageTransitionType.rightToLeftWithFade,
-                    duration: const Duration(seconds: 1),
-                    child: const PaymentScreen()));
-          },
-          child: Container(
-            width: size.width * 0.9,
-            height: size.height * 0.06,
-            color: blueColor,
-            child: Center(
-              child: Text(
-                "Buy Now",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: size.width * 0.05),
-              ),
-            ),
-          ),
-        ),
-      ),
+          padding: const EdgeInsets.all(8.0),
+          child: CustomButton(
+              width: size.width * 0.9,
+              height: size.height * 0.05,
+              fontWeight: FontWeight.bold,
+              borderCircular: 0,
+              text: "Buy Now",
+              onpressed: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeftWithFade,
+                        duration: const Duration(seconds: 1),
+                        child: const PaymentScreen()));
+              })),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(

@@ -1,3 +1,4 @@
+import 'package:e_commerce/src/commans/custom_button/custom_cart_box/custom_cart_box.dart';
 import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/home/home_screen.dart';
@@ -65,107 +66,9 @@ class _CartScreenState extends State<CartScreen> {
               ),
               //
               for (var i = 0; i < 5; i++) ...[
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15),
-                  child: Card(
-                    elevation: 10,
-                    child: Container(
-                      width: size.width,
-                      height: size.height * 0.2,
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset(
-                              "assets/images/shirt.jpg",
-                              fit: BoxFit.cover,
-                              width: 150,
-                              height: 200,
-                            ),
-                            //
-                            SizedBox(
-                              width: size.width * 0.02,
-                            ),
-                            //
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(
-                                  "Women t-shirt",
-                                  style: TextStyle(
-                                      color: Colors.grey.shade700,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: size.width * 0.04),
-                                ),
-                                Text(
-                                  "Lotto ltd",
-                                  style: TextStyle(
-                                      color: Colors.grey.shade500,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: size.width * 0.04),
-                                ),
-                                Text(
-                                  "\$34.50",
-                                  style: TextStyle(
-                                      color: blueColor,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: size.width * 0.04),
-                                ),
-                                Row(
-                                  children: [
-                                    Card(
-                                      elevation: 10,
-                                      child: Container(
-                                        width: 35,
-                                        height: 35,
-                                        color: Colors.white,
-                                        child: const Center(
-                                            child: Icon(
-                                          Icons.remove,
-                                          color: Colors.grey,
-                                        )),
-                                      ),
-                                    ),
-                                    Card(
-                                      elevation: 10,
-                                      child: Container(
-                                        width: 35,
-                                        height: 35,
-                                        color: Colors.white,
-                                        child: const Center(
-                                            child: Text(
-                                          "1",
-                                          style: TextStyle(color: Colors.grey),
-                                        )),
-                                      ),
-                                    ),
-                                    Card(
-                                      elevation: 10,
-                                      child: Container(
-                                        width: 35,
-                                        height: 35,
-                                        color: Colors.white,
-                                        child: const Center(
-                                            child: Icon(
-                                          Icons.add,
-                                          color: Colors.grey,
-                                        )),
-                                      ),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            //
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                )
+                const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: CustomCartBox())
               ]
             ],
           ),

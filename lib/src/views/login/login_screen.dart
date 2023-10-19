@@ -91,6 +91,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Center(
                   child: CustomButton(
+                      fontWeight: FontWeight.bold,
+                      width: size.width * 0.7,
+                      height: size.height * 0.05,
+                      borderCircular: 5,
                       text: "Log in",
                       onpressed: () {
                         Navigator.pushReplacement(

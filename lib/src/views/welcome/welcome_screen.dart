@@ -58,6 +58,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             CustomButton(
                 text: "Login",
+                width: size.width * 0.7,
+                height: size.height * 0.05,
+                fontWeight: FontWeight.bold,
+                borderCircular: 5,
                 onpressed: () {
                   Navigator.push(
                       context,
