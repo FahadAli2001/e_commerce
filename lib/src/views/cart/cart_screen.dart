@@ -62,7 +62,7 @@ class _CartScreenState extends State<CartScreen> {
                 style: TextStyle(
                     color: Colors.grey.shade700,
                     fontWeight: FontWeight.bold,
-                    fontSize: size.width * 0.08),
+                    fontSize: size.width * 0.07),
               ),
               //
               for (var i = 0; i < 5; i++) ...[

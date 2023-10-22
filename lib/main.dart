@@ -1,3 +1,4 @@
+import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/controller/auth/auth_controller.dart';
 import 'package:e_commerce/src/views/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,9 +20,12 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'E-commerce',
+        
         theme: ThemeData(
-          useMaterial3: true,
-        ),
+            useMaterial3: true,
+            primaryColor: blueColor,
+            primarySwatch:blueMaterialColor  ,
+            inputDecorationTheme: InputDecorationTheme(focusColor: blueColor)),
         home: const SplashScreen(),
       ),
     );
