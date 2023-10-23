@@ -1,7 +1,9 @@
 import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/featured/featured_screen.dart';
+import 'package:e_commerce/src/views/kids_category/kids_category.dart';
 import 'package:e_commerce/src/views/men_category/men_category.dart';
+import 'package:e_commerce/src/views/newborn_category/newborn_category.dart';
 import 'package:e_commerce/src/views/single_product/single_product.dart';
 import 'package:e_commerce/src/views/women_category/women_category_screen.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.blue.shade400,
+        backgroundColor: Colors.white,
         title: Text(
           "Tickers",
           style: TextStyle(fontWeight: FontWeight.bold, color: blueColor),
@@ -160,6 +162,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                         PageTransitionType.rightToLeftWithFade,
                                     duration: const Duration(seconds: 1),
                                     child: const MenCategory()));
+                          } else if (index == 2) {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type:
+                                        PageTransitionType.rightToLeftWithFade,
+                                    duration: const Duration(seconds: 1),
+                                    child: const KidsCategoryScreen()));
+                          } else if (index == 3) {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type:
+                                        PageTransitionType.rightToLeftWithFade,
+                                    duration: const Duration(seconds: 1),
+                                    child: const NewbornCategoryScreen()));
                           }
                         },
                         child: Container(

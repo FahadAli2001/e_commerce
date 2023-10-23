@@ -3,23 +3,23 @@ import 'package:e_commerce/src/views/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-class MenCategory extends StatefulWidget {
-  const MenCategory({super.key});
+class NewbornCategoryScreen extends StatefulWidget {
+  const NewbornCategoryScreen({super.key});
 
   @override
-  State<MenCategory> createState() => _MenCategoryState();
+  State<NewbornCategoryScreen> createState() => _NewbornCategoryScreenState();
 }
 
-class _MenCategoryState extends State<MenCategory> {
+class _NewbornCategoryScreenState extends State<NewbornCategoryScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade400,
+        backgroundColor: Colors.green.shade300,
         centerTitle: true,
         title: const Text(
-          "For Mens",
+          "For Kids",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         leading: GestureDetector(
@@ -83,9 +83,9 @@ class _MenCategoryState extends State<MenCategory> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    "Men T-Shirt",
+                                    "Kids T-Shirt",
                                     style:
-                                        TextStyle(color: Colors.blue.shade400),
+                                        TextStyle(color: Colors.green.shade300),
                                   ),
                                   const Icon(
                                     Icons.favorite,
