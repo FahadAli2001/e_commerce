@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:e_commerce/src/commans/custom_button/custom_button.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
+import 'package:e_commerce/src/controller/connectivity/connectivity_controller.dart';
 import 'package:e_commerce/src/views/login/login_screen.dart';
 import 'package:e_commerce/src/views/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +16,14 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    
+    log("message");
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
