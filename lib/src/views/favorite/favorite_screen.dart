@@ -87,9 +87,18 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                   fit: BoxFit.cover,
                                 ),
                                 //
-
                                 const Text("\$55.00"),
-                                const Text("Men T-Shirt"),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Men T-Shirt"),
+                                    Icon(
+                                      Icons.favorite,
+                                      color: Colors.red,
+                                    )
+                                  ],
+                                ),
                               ],
                             ),
                           ),

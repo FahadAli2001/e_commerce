@@ -1,7 +1,9 @@
 import 'package:e_commerce/src/const/colors/colors.dart';
 import 'package:e_commerce/src/const/paddings/paddings.dart';
 import 'package:e_commerce/src/views/featured/featured_screen.dart';
+import 'package:e_commerce/src/views/men_category/men_category.dart';
 import 'package:e_commerce/src/views/single_product/single_product.dart';
+import 'package:e_commerce/src/views/women_category/women_category_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:page_transition/page_transition.dart';
@@ -57,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue.shade400,
         title: Text(
           "Tickers",
           style: TextStyle(fontWeight: FontWeight.bold, color: blueColor),
@@ -140,24 +142,45 @@ class _HomeScreenState extends State<HomeScreen> {
                     return Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 11, vertical: 8),
-                      child: Container(
-                        width: size.width * 0.25,
-                        decoration: BoxDecoration(
-                          color: colors[index],
-                          borderRadius: BorderRadius.circular(5),
-                          boxShadow: [
-                            BoxShadow(
-                              color:
-                                  Colors.grey.withOpacity(0.5), // Shadow color
-                              spreadRadius: 5, // Spread radius
-                              blurRadius: 5, // Blur radius
-                              offset: const Offset(
-                                  0, 3), // Offset (position) of the shadow
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: text[index],
+                      child: InkWell(
+                        onTap: () {
+                          if (index == 0) {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type:
+                                        PageTransitionType.rightToLeftWithFade,
+                                    duration: const Duration(seconds: 1),
+                                    child: const WomenCategoryScreen()));
+                          } else if (index == 1) {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type:
+                                        PageTransitionType.rightToLeftWithFade,
+                                    duration: const Duration(seconds: 1),
+                                    child: const MenCategory()));
+                          }
+                        },
+                        child: Container(
+                          width: size.width * 0.25,
+                          decoration: BoxDecoration(
+                            color: colors[index],
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey
+                                    .withOpacity(0.5), // Shadow color
+                                spreadRadius: 5, // Spread radius
+                                blurRadius: 5, // Blur radius
+                                offset: const Offset(
+                                    0, 3), // Offset (position) of the shadow
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: text[index],
+                          ),
                         ),
                       ),
                     );
@@ -225,21 +248,34 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           width: size.width * 0.4,
                           color: Colors.white,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                "assets/images/shirt.jpg",
-                                width: size.width,
-                                height: size.height * 0.23,
-                                fit: BoxFit.cover,
-                              ),
-                              //
+                          child: Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image.asset(
+                                  "assets/images/shirt.jpg",
+                                  width: size.width,
+                                  height: size.height * 0.23,
+                                  fit: BoxFit.cover,
+                                ),
+                                //
 
-                              const Text("\$55.00"),
-                              const Text("Men T-Shirt"),
-                            ],
+                                const Text("\$55.00"),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Men T-Shirt"),
+                                    Icon(
+                                      Icons.favorite,
+                                      color: Colors.red,
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -290,21 +326,34 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Container(
                         width: size.width * 0.4,
                         color: Colors.white,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image.asset(
-                              "assets/images/shirt.jpg",
-                              width: size.width,
-                              height: size.height * 0.23,
-                              fit: BoxFit.cover,
-                            ),
-                            //
+                        child: Padding(
+                          padding: const EdgeInsets.all(5),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Image.asset(
+                                "assets/images/shirt.jpg",
+                                width: size.width,
+                                height: size.height * 0.23,
+                                fit: BoxFit.cover,
+                              ),
+                              //
 
-                            const Text("\$55.00"),
-                            const Text("Men T-Shirt"),
-                          ],
+                              const Text("\$55.00"),
+                              const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("Men T-Shirt"),
+                                  Icon(
+                                    Icons.favorite,
+                                    color: Colors.red,
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );

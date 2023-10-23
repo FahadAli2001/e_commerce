@@ -3,18 +3,18 @@ import 'package:e_commerce/src/views/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-class WomenCategoryScreen extends StatefulWidget {
-  const WomenCategoryScreen({super.key});
+class MenCategory extends StatefulWidget {
+  const MenCategory({super.key});
 
   @override
-  State<WomenCategoryScreen> createState() => _WomenCategoryScreenState();
+  State<MenCategory> createState() => _MenCategoryState();
 }
 
-class _WomenCategoryScreenState extends State<WomenCategoryScreen> {
+class _MenCategoryState extends State<MenCategory> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
-    return Scaffold(
+     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.pink.shade300,
         centerTitle: true,
@@ -83,9 +83,9 @@ class _WomenCategoryScreenState extends State<WomenCategoryScreen> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    "Women T-Shirt",
+                                    "Men T-Shirt",
                                     style:
-                                        TextStyle(color: Colors.pink.shade300),
+                                        TextStyle(color: Colors.blue.shade400),
                                   ),
                                   const Icon(
                                     Icons.favorite,
