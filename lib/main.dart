@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  checkInternetConnection();
+
   runApp(const MyApp());
 }
 
@@ -18,7 +18,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthController())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthController()),
+        ChangeNotifierProvider(create: (_) => InternetConnectivityController())
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'E-commerce',

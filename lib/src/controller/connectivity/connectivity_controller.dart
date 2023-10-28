@@ -11,21 +11,24 @@ import 'package:top_snackbar_flutter/top_snack_bar.dart';
 final Connectivity connectivity = Connectivity();
 late StreamSubscription<ConnectivityResult> subscription;
 
-void checkInternetConnection() {
-  subscription = Connectivity().onConnectivityChanged.listen((result) {
-    if (result == ConnectivityResult.wifi ||
-        result == ConnectivityResult.mobile) {
-      log("Internet is available");
-    } else {
-      // showTopSnackBar(
-      //   Overlay.of(context),
-      //   const CustomSnackBar.error(
-      //     message: "Please check your internet connection",
-      //   ),
-      //   animationDuration: const Duration(milliseconds: 1000),
-      //   dismissType: DismissType.onTap,
-      // );
-      log("No internet");
-    }
-  });
+class InternetConnectivityController with ChangeNotifier {
+  String status = '';
+
+  String checkInternetConnection() {
+    subscription = Connectivity().onConnectivityChanged.listen((result) {
+      if (result == ConnectivityResult.wifi ||
+          result == ConnectivityResult.mobile) {
+        log(result.toString());
+        status = "internet";
+        log(status);
+        notifyListeners();
+      } else {
+        log(result.toString());
+        status = "no Internet";
+        log(status);
+        notifyListeners();
+      }
+    });
+    return status;
+  }
 }
